@@ -1,15 +1,28 @@
-function setup() {
-  createCanvas(600, 300);
-  colorMode(HSB);
+function setup(){
+    createCanvas(400, 400);
+    colorMode(HSB);
 }
 
-function draw() {
-  //green background
-  background(142,360,360);
+function draw(){
 
-  //right aligned square
-  square(325,25,250);
+    noStroke();
+    
+    //red top circle
+    push();
+    fill(0,50,100,.04);
+    circle(200, 120, 225);
+    pop();
 
-  //left aligned circle
-  circle(150,150,250);
+    //right green circle
+    push();
+    fill(120,50,100,.04);
+    circle(275, 260, 225);
+    pop();
+    
+    //left blue circle
+    push();
+    fill(250,50,100,.04);
+    circle(125, 260, 225);
+    pop();
+    
 }
