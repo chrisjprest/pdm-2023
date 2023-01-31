@@ -11,10 +11,16 @@ function setup() {
 
 function mouseDragged(){
   push();
-  noStroke();
-  fill(h,st,b);
-  ellipse(mouseX,mouseY,20,20);
+  strokeWeight(20)
+  stroke(h,st,b);
+  line(pmouseX,pmouseY,mouseX,mouseY);
   pop();
+}
+
+function keyPressed(){
+  if(keyCode == BACKSPACE){
+    background(0,0,100);
+  }
 }
 
 function draw() {
@@ -79,74 +85,73 @@ function draw() {
   square(5,424.4,41.67);
   pop();
 
-
-    if(mouseIsPressed){  
-      if(mouseX >= 5 && mouseX <= s && mouseY <= 10*s){
-        loop();
-        if(mouseY >= 5 && mouseY <= s){
-          h = 0;
-          st = 100;
-          b = 100;
-          console.log("color:red");
-        }
-        else if(mouseY >= s+5 && mouseY <= 2*s){
-          h = 30;
-          st = 100;
-          b = 100;
-          console.log("color:orange");
-        }
-        else if(mouseY >= 2*s+5 && mouseY <= 3*s){
-          h = 60;
-          st = 100;
-          b = 100;
-          console.log("color:yellow");
-        }
-        else if(mouseY >= 3*s+5 && mouseY <=4*s){
-          h = 90;
-          st = 100;
-          b = 100;
-          console.log("color:green");
-        }
-        else if(mouseY >= 4*s+5 && mouseY <=5*s){
-          h = 180;
-          st = 100;
-          b = 100;
-          console.log("color:cyan");
-        }
-        else if(mouseY >= 5*s+5 && mouseY <=6*s){
-          h = 240;
-          st = 100;
-          b = 100;
-          console.log("color:blue");
-        }
-        else if(mouseY >= 6*s+5 && mouseY <=7*s){
-          h = 300;
-          st = 100;
-          b = 100;
-          console.log("color:magenta");
-        }
-        else if(mouseY >= 7*s+5 && mouseY <=8*s){
-          h = 30;
-          st = 100;
-          b = 50;
-          console.log("color:brown");
-        }
-        else if(mouseY >= 8*s+5 && mouseY <=9*s){
-          h = 0;
-          st = 0;
-          b = 100;
-          console.log("color:white");
-        }
-        else if(mouseY >= 9*s+5 && mouseY <=10*s){
-          h = 0;
-          st = 0;
-          b = 0;
-          console.log("color:black");
-        }
+  if(mouseIsPressed){  
+    if(mouseX >= 5 && mouseX <= s && mouseY <= 10*s){
+      loop();
+      if(mouseY >= 5 && mouseY <= s){
+        h = 0;
+        st = 100;
+        b = 100;
+        console.log("color:red");
       }
-      else{
-        mouseDragged();
+      else if(mouseY >= s+5 && mouseY <= 2*s){
+        h = 30;
+        st = 100;
+        b = 100;
+        console.log("color:orange");
+      }
+      else if(mouseY >= 2*s+5 && mouseY <= 3*s){
+        h = 60;
+        st = 100;
+        b = 100;
+        console.log("color:yellow");
+      }
+      else if(mouseY >= 3*s+5 && mouseY <=4*s){
+        h = 90;
+        st = 100;
+        b = 100;
+        console.log("color:green");
+      }
+      else if(mouseY >= 4*s+5 && mouseY <=5*s){
+        h = 180;
+        st = 100;
+        b = 100;
+        console.log("color:cyan");
+      }
+      else if(mouseY >= 5*s+5 && mouseY <=6*s){
+        h = 240;
+        st = 100;
+        b = 100;
+        console.log("color:blue");
+      }
+      else if(mouseY >= 6*s+5 && mouseY <=7*s){
+        h = 300;
+        st = 100;
+        b = 100;
+        console.log("color:magenta");
+      }
+      else if(mouseY >= 7*s+5 && mouseY <=8*s){
+        h = 30;
+        st = 100;
+        b = 50;
+        console.log("color:brown");
+      }
+      else if(mouseY >= 8*s+5 && mouseY <=9*s){
+        h = 0;
+        st = 0;
+        b = 100;
+        console.log("color:white");
+      }
+      else if(mouseY >= 9*s+5 && mouseY <=10*s){
+        h = 0;
+        st = 0;
+        b = 0;
+        console.log("color:black");
       }
     }
+    else{
+      mouseDragged();
+    }
   }
+}
 
